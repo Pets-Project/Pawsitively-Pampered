@@ -1,0 +1,39 @@
+{
+	"name": "pets-project",
+	"version": "1.0.0",
+	"description": "E-commerce platform for pet owners to acquire different pet services.",
+	"main": "server.js",
+	"scripts": {
+		"test": "jest",
+		"start": "node server.js",
+		"dev": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pets-Project/Pets-R-Us.git"
+	},
+	"keywords": [
+		"e-commerce",
+		"pets",
+		"backend",
+		"pets-service"
+	],
+	"author": "Max",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Pets-Project/Pets-R-Us/issues"
+	},
+	"homepage": "https://github.com/Pets-Project/Pets-R-Us#readme",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"mysql2": "^3.1.2",
+		"sequelize": "^6.28.2"
+	},
+	"devDependencies": {
+		"jest": "^29.4.3",
+		"nodemon": "^2.0.20",
+		"sequelize-cli": "^6.6.0"
+	}
+}
