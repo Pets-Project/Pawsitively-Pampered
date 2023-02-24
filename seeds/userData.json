@@ -1,17 +1,38 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "name": "Zeus",
+    "password": "password1",
+    "role": "Admin",
+    "email": "zeus@hotmail.com"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "name": "Gerardo",
+    "password": "password2",
+    "role": "User",
+    "email": "gerardo@yahoo.com"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "name": "Rose",
+    "password": "password3",
+    "role": "Admin",
+    "email": "rose@gmail.com"
+  },
+  {
+    "name": "Max",
+    "password": "password4",
+    "role": "User",
+    "email": "max@hotmail.com"
+  },
+  {
+    "name": "Manny",
+    "password": "password5",
+    "role": "Admin",
+    "email": "manny@gmail.com"
+  },
+   {
+    "name": "Adrian",
+    "password": "password6",
+    "role": "User",
+    "email": "manny@gmail.com"
   }
 ]
