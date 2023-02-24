@@ -1,4 +1,4 @@
-const dbConfig = require('../configs/db.config');
+const dbConfig = require('../../configs/db.config');
 
 const Sequelize = require('sequelize');
 // Configure Sequelize to connect to MySQL database
