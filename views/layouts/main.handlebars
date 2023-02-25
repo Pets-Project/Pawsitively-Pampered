@@ -1,0 +1,202 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com/3.2.4"></script>
+    <script>
+      tailwind.config = { darkMode: "class", theme: { fontFamily: { sans:
+      ["Roboto", "sans-serif"], body: ["Roboto", "sans-serif"], mono:
+      ["ui-monospace", "monospace"], }, }, corePlugins: { preflight: false, },
+      };
+    </script>
+
+    <title>Main</title>
+  </head>
+
+  <body>
+    <div class="h-screen bg-black">
+      <header class="py-4 bg-stone-900 sm:py-6">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between">
+            <div class="text-3xl text-gray-400">
+              <a href="#" title="" class="flex">
+                Pawsitively
+                <br />
+                Pampered
+              </a>
+            </div>
+
+            {{! Hamburger Menu icons. Both the menu itself and the X to close out. }}
+            <div class="flex md:hidden">
+              <button
+                type="button"
+                class="text-white"
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+              >
+                <span x-show="!expanded" aria-hidden="true">
+                  <svg
+                    class="w-7 h-7"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </span>
+
+                <span x-show="expanded" class="hidden hbMenuContent">
+                  <svg
+                    class="w-7 h-7"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            {{! Main nav on each page. Full screen }}
+            <nav
+              class="hidden space-x-10 lg:ml-20 lg:space-x-12 md:flex md:items-center md:justify-start"
+            >
+              <a
+                href="#"
+                title=""
+                class="text-2xl font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Profile
+              </a>
+
+              <a
+                href="#"
+                title=""
+                class="text-2xl font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Products
+              </a>
+
+              <a
+                href="#"
+                title=""
+                class="text-2xl font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Support
+              </a>
+            </nav>
+
+            <div
+              class="relative hidden md:items-center md:justify-center md:inline-flex group"
+            >
+              <div
+                class="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"
+              >
+              </div>
+              {{#if logged_in}}
+                <a
+                  href="/profile"
+                  title=""
+                  class="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+                  role="button"
+                > Welcome {{name}}! </a>
+              {{else}}
+                <a
+                  href="/signup"
+                  title=""
+                  class="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+                  role="button"
+                > Set Up New Profile </a>
+              {{/if}}
+            </div>
+          </div>
+
+          {{! Hamburger Menu nav links. }}
+          <nav class="hidden hbMenuContent">
+            <div class="flex flex-col pt-8 pb-4 space-y-6">
+              <a
+                href="/profile"
+                title=""
+                class="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Profile
+              </a>
+
+              <a
+                href="/products"
+                title=""
+                class="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Products
+              </a>
+
+              <a
+                href="/contactform"
+                title=""
+                class="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
+              >
+                Support
+              </a>
+
+              <div
+                class="relative inline-flex items-center justify-center group"
+              >
+                <div
+                  class="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"
+                >
+                </div>
+                {{#if logged_in}}
+                  <a
+                    href="/profile"
+                    title=""
+                    class="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+                    role="button"
+                  > Welcome {{name}}! </a>
+                {{else}}
+                  <a
+                    href="/signup"
+                    title=""
+                    class="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
+                    role="button"
+                  > Set Up New Profile </a>
+                {{/if}}
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    </div>
+
+    {{{body}}}
+
+    <script src="./homepage.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
+    ></script>
+  </body>
+
+</html>
