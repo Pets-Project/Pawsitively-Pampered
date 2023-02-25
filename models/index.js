@@ -1,26 +1,19 @@
-const dbConfig = require('../../configs/db.config');
+// import models
+const Product = require('./Product');
+const Pet = require('./Pet');
+const User = require('./User');
 
-const Sequelize = require('sequelize');
-// Configure Sequelize to connect to MySQL database
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-	host: dbConfig.HOST,
-	dialect: dbConfig.dialect,
-	operatorsAliases: false,
-
-	pool: {
-		max: dbConfig.pool.max,
-		min: dbConfig.pool.min,
-		acquire: dbConfig.pool.acquire,
-		idle: dbConfig.pool.idle,
-	},
+Pet.belongsTo(User, {
+	foreignKey: 'owner_id'
 });
 
-const db = {};
+User.hasMany(Pet, {
+	foreignKey: 'owner_id',
+	onDelete: 'CASCADE',
+});
 
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-
-// sample model for user
-db.users = require('./user.model')(sequelize, Sequelize);
-
-module.exports = db;
+module.exports = {
+	Product,
+	Pet,
+	User,
+};
