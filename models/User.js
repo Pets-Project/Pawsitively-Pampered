@@ -19,6 +19,9 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [8, 14],
+            },
         },
         role: {
             type: DataTypes.STRING,
@@ -29,7 +32,6 @@ User.init(
             unique: true,
             validate: {
                 isEmail: true,
-                len: [8, 14],
             },
         },
     },
