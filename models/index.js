@@ -22,5 +22,6 @@ db.sequelize = sequelize;
 
 // sample model for user
 db.users = require('./user.model')(sequelize, Sequelize);
-
+db.Pet = require('./Pet.model')(sequelize);
+db.Product = require('./Product.model')(sequelize);
 module.exports = db;
