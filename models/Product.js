@@ -28,36 +28,11 @@ Product.init(
             allowNull: false,
         },
         allergens: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'pet',
-                key: 'allergies',
-            }
-        },
-        diet_needs: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'pet',
-                key: 'diet_needs',
-            }
-        },
-        other_needs: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'pet',
-                key: 'other_needs',
-            }
+            type: DataTypes.BOOLEAN,
         },
         age_prefered: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: 'pet',
-                key: 'age',
-            }
         },
     },
     {
