@@ -64,36 +64,6 @@ Pet.init(
                 key: 'id',
             },
         },
-        weight: {
-            type: Datatypes.DECIMAL,
-            allowNull: false,
-        },
-        tags: {
-            references: {
-                model: 'pet',
-                key: 'species',
-            },
-            references: {
-                model: 'pet',
-                key: 'breed',
-            },
-            references: {
-                model: 'pet',
-                key: 'allergies'
-            },
-            references: {
-                model: 'pet',
-                key: 'diet_needs',
-            },
-            references: {
-                model: 'pet',
-                key: 'age',
-            },
-            references: {
-                model: 'pet',
-                key: 'weight',
-            },
-        },
     },
     
     {
