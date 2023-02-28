@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
+const { beforeCreate } = require('../../blog/config/connection');
 
 /**
  * Represents a user in the system.
@@ -11,6 +13,9 @@ const sequelize = require('../config/connection');
  * @param {string} attributes.email - The email of the user.
  */
 class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
 }
 
 User.init(
@@ -47,6 +52,12 @@ User.init(
         },
     },
     {
+        hooks: {
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+        },
         sequelize,
         freezeTableName: true,
         underscored: true,
