@@ -1,44 +1,46 @@
-//took from the previous projects as template
-
-const router = require('express').Router();
-const apiRoutes = require('./controllers/routes-');
+const path = require('path');
 const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
-// router.use('/routes', apiRoutes);
-
-//middleware
-
-//Maxs code
-module.exports = router;
-
-
-require('dotenv').config();
-
-// get express
-const cors = require('cors');
+const sequelize = require('./configs/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-
-// configure app
-app.use(cors());
-
-// db config
-const db = require('./models');
-
-db.sequelize
-	.sync()
-	.then(() => console.log('Synced db'))
-	.catch((err) => console.log(`Failed to sync db: ${err}`));
-
-const routes = require('./controllers/routes-');
-const { middleware } = require('yargs');
-
-// require routes
-app.use('/users', routes.users);
-
-// get the port from the env
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
