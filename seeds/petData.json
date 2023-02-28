@@ -3,33 +3,33 @@
       "name": "Barney",
       "species": "Dog",
       "breed": "Golden Retriever",
-      "owner_id": "1",
       "gender": "Male",
       "allergies": "N/A",
       "diet_needs": "Dry Dog Food",
       "other_needs": "N/A",
-      "age": "5"
+      "age": 5,
+      "owner_id": 1
   },
   {
       "name": "Tofu",
       "species": "Dog",
       "breed": "Chihuahua",
-      "owner_id": 2,
       "gender": "Female",
       "allergies": "Wheat Allergy",
       "diet_needs": "Wet Dog Food",
       "other_needs": "Arthritis",
-      "age": "7"
+      "age": 7,
+      "owner_id": 2
   },
   {
       "name": "Henry",
       "species": "Cat",
       "breed": "British Shorthair",
-      "owner_id": "1",
       "gender": "Male",
       "allergies": "Sentive Skin",
       "diet_needs": "Dry Cat Food",
       "other_needs": "Diabetes",
-      "age": 8
+      "age": 8,
+      "owner_id": 3
   }
 ]
