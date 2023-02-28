@@ -7,7 +7,8 @@ class Pet extends Model {}
  * 
  * @param {Sequelize} sequelize 
  */
- const Pet = (sequelize) => {
+
+ 
 Pet.init(
     {
         id: {
@@ -62,7 +63,5 @@ Pet.init(
         modelName: 'pet',
     }
 );
-return PetModel;
- };
- 
+
 module.exports = Pet;
