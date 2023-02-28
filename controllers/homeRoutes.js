@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -48,6 +48,15 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/contactform', async (req, res) => {
+  try {
+    // Pass serialized data and session flag into template
+    res.render('contactform');
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
