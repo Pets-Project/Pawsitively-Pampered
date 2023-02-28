@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../configs/connection');
 
 /**
  * Represents a user in the system.
@@ -13,11 +13,6 @@ const sequelize = require('../config/connection');
 class User extends Model {
 }
 
-/**
- * 
- * @param {Sequelize} sequelize 
- */
- const User = (sequelize) => {
 User.init(
     {
         id: {
@@ -34,6 +29,9 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [8, 14],
+            },
         },
         role: {
             type: DataTypes.STRING,
@@ -55,7 +53,7 @@ User.init(
         modelName: 'user',
     }
 );
-return UserModel;
-};
+
+
 
 module.exports = User;
