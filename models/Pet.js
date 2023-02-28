@@ -1,51 +1,68 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Pet extends Model {}
 
+/**
+ * 
+ * @param {Sequelize} sequelize 
+ */
+
+ 
 Pet.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         species: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         breed: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
+        },
+        gender: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        allergies: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        diet_needs: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        other_needs: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
         owner_id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
             },
         },
-        gender: {
-            type: Datatypes.STRING,
+        product_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-        },
-        allergies: {
-            type: Datatypes.STRING,
-        },
-        diet_needs: {
-            type: Datatypes.STRING,
-        },
-        other_needs: {
-            type: Datatypes.STRING,
-        },
-        age: {
-            type: Datatypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'product',
+                key: 'id',
+            },
         },
         weight: {
             type: Datatypes.DECIMAL,
@@ -86,7 +103,6 @@ Pet.init(
         underscored: true,
         modelName: 'pet',
     }
-
 );
 
 module.exports = Pet;

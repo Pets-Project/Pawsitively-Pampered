@@ -19,12 +19,19 @@ Product.init(
             type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        stores: {
+        quantity: { 
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        image_file:{
             type: DataTypes.STRING,
             allowNull: false,
         },
-        tags: {
-            type: DataTypes.STRING,
+        allergens: {
+            type: DataTypes.BOOLEAN,
+        },
+        age_prefered: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
@@ -36,5 +43,6 @@ Product.init(
         modelName: 'product',
     }
 );
+
 
 module.exports = Product;

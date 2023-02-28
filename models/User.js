@@ -1,7 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+/**
+ * Represents a user in the system.
+ * @constructor
+ * @param {Object} attributes - The attributes of the user.
+ * @param {string} attributes.name - The name of the user.
+ * @param {string} attributes.password - The password of the user.
+ * @param {string} attributes.role - The role of the user.
+ * @param {string} attributes.email - The email of the user.
+ */
+class User extends Model {
+}
 
 User.init(
     {
@@ -32,6 +42,7 @@ User.init(
             unique: true,
             validate: {
                 isEmail: true,
+                len: [8],
             },
         },
     },
@@ -42,5 +53,7 @@ User.init(
         modelName: 'user',
     }
 );
+
+
 
 module.exports = User;
