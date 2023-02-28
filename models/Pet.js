@@ -1,5 +1,5 @@
 const { Model, Datatypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../configs/connection');
 
 class Pet extends Model {}
 
@@ -39,12 +39,10 @@ Pet.init(
         diet_needs: {
             type: Datatypes.STRING,
             allowNull: false,
-
         },
         other_needs: {
             type: Datatypes.STRING,
             allowNull: false,
-
         },
         age: {
             type: Datatypes.INTEGER,

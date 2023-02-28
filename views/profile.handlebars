@@ -11,15 +11,29 @@
     <form class="form new-project-form">
       <div class="form-group">
         <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <input
+          class="form-input"
+          type="text"
+          id="project-name"
+          name="project-name"
+        />
       </div>
       <div class="form-group">
         <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <input
+          class="form-input"
+          type="number"
+          id="project-funding"
+          name="project-funding"
+        />
       </div>
       <div class="form-group">
         <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <textarea
+          class="form-input"
+          id="project-desc"
+          name="project-desc"
+        ></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,21 +41,56 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+  {{#each}}
+
+  <div class="m-5">
+    <div
+      class="flex flex-col rounded-lg bg-neutral-700/30 shadow-lg dark:bg-neutral-700 md:max-w-xl md:flex-row"
+    >
+      <img
+        class="h-24 self-center w-full rounded-t-lg object-cover md:h-48 md:w-48 md:rounded-none md:rounded-l-lg"
+        src="./assets/pet-on-couch.jpg"
+        alt=""
+      />
+      <div class="flex flex-col justify-start p-6">
+        <h5
+          class="mb-2 text-2xl font-medium text-blue-600 dark:text-neutral-50"
+        >
+          {{}}
+        </h5>
+        <div class="mb-4 text-base text-white dark:text-white">
+          <p>Type: {{}}</p>
+          <p>Breed: {{}} </p>
+          <p>Age: {{}} </p>
+          <p>Size: {{}} </p>
+          <p>Allergies: {{}} </p>
+          <p>Special Needs: {{}} </p>
+        </div>
       </div>
     </div>
-    {{/each}}
   </div>
+
+  {{#/each}}
+
+  {{#if projects.length}}
+    <div class="col-md-6 project-list">
+      <h3>Current Projects:</h3>
+
+      {{#each projects as |project|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button
+              class="btn btn-sm btn-danger"
+              data-id="{{project.id}}"
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
   {{/if}}
 </div>
 
