@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class Product extends Model {}
 
-const Product = (sequelize) => {
 Product.init(
     {
         id: {
@@ -20,9 +19,45 @@ Product.init(
             type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        stores: {
+        quantity: { 
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        image_file:{
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        allergens: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'pet',
+                key: 'allergies',
+            }
+        },
+        diet_needs: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'pet',
+                key: 'diet_needs',
+            }
+        },
+        other_needs: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'pet',
+                key: 'other_needs',
+            }
+        },
+        age_prefered: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'pet',
+                key: 'age',
+            }
         },
     },
     {
@@ -33,6 +68,6 @@ Product.init(
         modelName: 'product',
     }
 );
-}
+
 
 module.exports = Product;

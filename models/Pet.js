@@ -42,12 +42,18 @@ Pet.init(
         },
         allergies: {
             type: Datatypes.STRING,
+            allowNull: false,
+           
         },
         diet_needs: {
             type: Datatypes.STRING,
+            allowNull: false,
+            
         },
         other_needs: {
             type: Datatypes.STRING,
+            allowNull: false,
+            
         },
         age: {
             type: Datatypes.INTEGER,
