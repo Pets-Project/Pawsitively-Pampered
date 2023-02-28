@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Product extends Model {}
 
+const Product = (sequelize) => {
 Product.init(
     {
         id: {
@@ -44,5 +45,7 @@ Product.init(
     }
 );
 
+return ProductModel;
+}
 
 module.exports = Product;

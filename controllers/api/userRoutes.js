@@ -59,3 +59,102 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+/* user routes if we want to use bcrypt
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
+const router = require('express').Router();
+
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll();
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id);
+        if (!userData) {
+            res.status(404).json({ message: 'No user found with this id!' });
+            return;
+        }
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
+
+router.post('/', async (req, res) => {
+    try {
+        const userData = await User.create({ ...req.body, password: await bcrypt.hash(req.body.password, 10) });
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(400).json(err.message);
+    }
+});
+
+router.post('/bulk', async (req, res) => {
+    try {
+        const users = req.body;
+
+        // hash password for each user
+        const hashedUsers = await Promise.all(users.map(async user => {
+            const hashedPassword = await bcrypt.hash(user.password, 10);
+            return {
+                ...user,
+                password: hashedPassword
+            }
+        }));
+
+        // insert hashed users into database
+        await User.bulkCreate(hashedUsers);
+
+        res.status(201).json({ message: 'Users created successfully.' });
+    } catch (err) {
+        res.status(500).json({
+            message: 'Server error.',
+            error: err.message
+        });
+    }
+});
+
+
+
+router.put('/:id', async (req, res) => {
+    try {
+        const userData = await User.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!userData[0]) {
+            res.status(404).json({ message: 'No user with this id!' });
+            return;
+        }
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const userData = await User.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!userData) {
+            res.status(404).json({ message: 'No user with this id!' });
+            return;
+        }
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
+
+module.exports = router;

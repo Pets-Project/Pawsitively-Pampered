@@ -12,7 +12,7 @@ const sequelize = require('../configs/connection');
  */
 class User extends Model {
 }
-
+const User = (sequelize) => {
 User.init(
     {
         id: {
@@ -35,14 +35,16 @@ User.init(
         },
         role: {
             type: DataTypes.STRING,
+            defaultValue: 'owner',
             allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
-            unique: true,
+            unique: {
+                msg: 'Email address is already in use'
+            },
             validate: {
                 isEmail: true,
-                len: [8],
             },
         },
     },
@@ -53,7 +55,8 @@ User.init(
         modelName: 'user',
     }
 );
-
+return UserModel;
+};
 
 
 module.exports = User;

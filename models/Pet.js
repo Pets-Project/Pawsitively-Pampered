@@ -1,14 +1,17 @@
 const { Model, Datatypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pet extends Model {}
+class Pet extends Model {static associate(models) {
+    PetModel.belongsTo(models.User);
+}
+}
 
 /**
  * 
  * @param {Sequelize} sequelize 
  */
 
- 
+ const Pet = (sequelize) => {
 Pet.init(
     {
         id: {
@@ -74,5 +77,7 @@ Pet.init(
         modelName: 'pet',
     }
 );
+return PetModel;
+};
 
 module.exports = Pet;
