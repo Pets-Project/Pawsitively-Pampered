@@ -28,6 +28,28 @@ Pet.init(
         breed: {
             type: Datatypes.STRING,
         },
+        gender: {
+            type: Datatypes.STRING,
+            allowNull: false,
+        },
+        allergies: {
+            type: Datatypes.STRING,
+            allowNull: false,
+        },
+        diet_needs: {
+            type: Datatypes.STRING,
+            allowNull: false,
+
+        },
+        other_needs: {
+            type: Datatypes.STRING,
+            allowNull: false,
+
+        },
+        age: {
+            type: Datatypes.INTEGER,
+            allowNull: false,
+        },
         owner_id: {
             type: Datatypes.INTEGER,
             allowNull: false,
@@ -36,22 +58,13 @@ Pet.init(
                 key: 'id',
             },
         },
-        gender: {
-            type: Datatypes.STRING,
-            allowNull: false,
-        },
-        allergies: {
-            type: Datatypes.STRING,
-        },
-        diet_needs: {
-            type: Datatypes.STRING,
-        },
-        other_needs: {
-            type: Datatypes.STRING,
-        },
-        age: {
+        product_id: {
             type: Datatypes.INTEGER,
             allowNull: false,
+            references: {
+                model: 'product',
+                key: 'id',
+            },
         },
     },
     

@@ -42,7 +42,7 @@ User.init(
             unique: true,
             validate: {
                 isEmail: true,
-                len: [8, 14],
+                len: [8],
             },
         },
     },
