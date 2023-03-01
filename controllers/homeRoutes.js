@@ -61,7 +61,13 @@ router.get('/contactform', async (req, res) => {
 
 router.get('/products', async (req, res) => {
   try {
-    res.render('products');
+    const productData = await Product.findAll({
+      
+    });
+  
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('products', { products });
   } catch (err) {
     res.status(500).json(err);
   }
