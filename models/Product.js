@@ -11,6 +11,10 @@ Product.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         prod_description: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,10 +34,11 @@ Product.init(
         allergens: {
             type: DataTypes.BOOLEAN,
         },
-        age_prefered: {
+        age_preferred: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        },
+    
+        }
     },
     {
         sequelize,
