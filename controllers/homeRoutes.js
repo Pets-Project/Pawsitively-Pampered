@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Product, Pet } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -61,7 +61,13 @@ router.get('/contactform', async (req, res) => {
 
 router.get('/products', async (req, res) => {
   try {
-    res.render('products');
+    const productData = await Product.findAll({
+      
+    });
+  
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('products', { products });
   } catch (err) {
     res.status(500).json(err);
   }
