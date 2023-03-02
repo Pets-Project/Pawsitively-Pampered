@@ -33,7 +33,7 @@ Pet.init(
             allowNull: false,
         },
         allergies: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         diet_needs: {

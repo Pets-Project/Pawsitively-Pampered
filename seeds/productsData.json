@@ -47,7 +47,7 @@
     {
         "name": "Blue Buffalo Baby Blue Formula High-Protein, Grain-Free Chicken and Pea Recipe, Dry Cat Food",
         "prod_description": "Formulated for the health and well-being of senior dogs.",
-        "price": 900.00,
+        "price": 49.99,
         "quantity": 1,
         "image_file": "/assets/product_images/babyblue_cat_dry_hpchickenpea_mobile.jpg",
         "allergens": false,
@@ -56,7 +56,7 @@
     {
         "name": "BLUE Tastefuls Indoor Hairball Control, Chicken and Brown Rice Recipe, Dry Cat Food",
         "prod_description": "Formulated for the health and well-being of senior dogs.",
-        "price": 12.00,
+        "price": 22.00,
         "quantity": 900000,
         "image_file": "/assets/product_images/pdp_mobile_tastefuls_dry_hairball.jpg",
         "allergens": false,
@@ -65,7 +65,7 @@
     {
         "name": "BLUE Wilderness Mature Chicken Recipe, Dry Cat Food",
         "prod_description": "Formulated for the health and well-being of senior dogs.",
-        "price": 675.00,
+        "price": 75.00,
         "quantity": 499,
         "image_file": "/assets/product_images/wild_cat_dry_mature_chicken_mobile.jpg",
         "allergens": false,
@@ -74,7 +74,7 @@
     {
         "name": "Frisco Paw & Play Mouse Cat Toy, 10-Pack",
         "prod_description": "Drive your kitty wild with the sights, sounds and feels they love to play with. Lets get ready to bat, swat and purr!",
-        "price": 0.98,
+        "price": 20.98,
         "quantity": 0,
         "image_file": "/assets/product_images/166366_Main._AC_SS108_V1573593232_.jpg",
         "allergens": false,
@@ -142,6 +142,189 @@
         "image_file": "/assets/product_images/90_ZDOGLACE4-ZPEL0061_Z1008_20_MedusaPetLead-PetAccessories-versace-online-store_0_1.jpg",
         "allergens": false,
         "age_preferred": 5
-    }
+    },
+    {
+      "name": "FurryFriends Deluxe Dog Bed",
+      "prod_description": "FurryFriends cozy and comfortable dog bed for your furry companion.",
+      "price": 159.99,
+      "quantity": 23,
+      "image_file": "/assets/product_images/DogBed.jpg",
+      "allergens": false,
+      "age_preferred": null
+   },
+   {
+      "name": "CritterPlay Exotic Bird Toy Set",
+      "prod_description": "CritterPlay colorful and interactive toy set for exotic birds.",
+      "price": 49.95,
+      "quantity": 14,
+      "image_file": "/assets/product_images/BirdToys.jpg",
+      "allergens": true,
+      "age_preferred": null
+   },
+  
+   {
+      "name": "FishFrenzy Aquarium Starter Kit",
+      "prod_description": "FishFrenzy aquarium starter kit includes everything you need to start an aquarium.",
+      "price": 89.99,
+      "quantity": 8,
+      "image_file": "/assets/product_images/FishFrenzy.jpg",
+      "allergens": false,
+      "age_preferred": 18
+   },
+   {
+      "name": "HamsterHaven Playpen",
+      "prod_description": "HamsterHaven playpen for your furry little friend to play and explore.",
+      "price": 29.95,
+      "quantity": 20,
+      "image_file": "/assets/product_images/HamsterHaven.jpg",
+      "allergens": false,
+      "age_preferred": null
+   },
+   {
+      "name": "ReptileRetreat Terrarium Kit",
+      "prod_description": "ReptileRetreat terrarium kit includes everything you need to create a comfortable habitat for your reptile.",
+      "price": 149.99,
+      "quantity": 5,
+      "image_file": "/assets/product_images/Reptile.jpg",
+      "allergens": false,
+      "age_preferred": 16
+   },
+{
+   "name": "FeatheredFriends Wild Bird Feeder",
+   "prod_description": "FeatheredFriends wild bird feeder for your outdoor feathered friends.",
+   "price": 209.99,
+   "quantity": 32,
+   "image_file": "/assets/product_images/BirdFeed.jpg",
+   "allergens": false,
+   "age_preferred": null
+},
+{
+   "name": "AquaticWonders Betta Fish Bowl",
+   "prod_description": "AquaticWonders betta fish bowl for your betta fish.",
+   "price": 49.99,
+   "quantity": 18,
+   "image_file": "/assets/",
+   "allergens": false,
+   "age_preferred": null
+},
+{
+   "name": "PetSafe Automatic Feeder",
+   "prod_description": "PetSafe automatic feeder to keep your pet fed even when you're not home.",
+   "price": 59.95,
+   "quantity": 6,
+   "image_file": "/assets/",
+   "allergens": false,
+   "age_preferred": null
+},
+{
+  "name": "CritterCraze Small Animal Cage",
+  "prod_description": "CritterCraze small animal cage for your pet rodents and other small animals.",
+  "price": 79.95,
+  "quantity": 12,
+  "image_file": "/assets/",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Fido's Fashion Collar",
+  "prod_description": "Fido's Fashion Collar is a stylish accessory for your dog to wear on walks and outings.",
+  "price": 24.99,
+  "quantity": 15,
+  "image_file": "/assets/",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Whisker's Delight Cat Food",
+  "prod_description": "Whisker's Delight cat food is a nutritious and delicious meal for your feline friend.",
+  "price": 34.99,
+  "quantity": 25,
+  "image_file": "/assets/",
+  "allergens": true,
+  "age_preferred": null
+},
+{
+  "name": "Playful Pup Toy Pack",
+  "prod_description": "Playful Pup toy pack includes a variety of toys for your energetic dog to enjoy.",
+  "price": 74.99,
+  "quantity": 8,
+  "image_file": "/assets/",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Purrfect Paradise Scratching Post",
+  "prod_description": "Purrfect Paradise scratching post is a great way for your cat to satisfy their scratching instincts.",
+  "price": 99.99,
+  "quantity": 10,
+  "image_file": "/assets/product_images/CatScratcher.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Fluffy Fleece Pet Bed",
+  "prod_description": "Fluffy Fleece Pet Bed is a cozy bed for your furry friend to snuggle up in.",
+  "price": 309.99,
+  "quantity": 20,
+  "image_file": "/assets/product_images/PetBed.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Canine Camo Dog Harness",
+  "prod_description": "Canine Camo Dog Harness is a durable and stylish harness for your dog to wear on walks and hikes.",
+  "price": 409.99,
+  "quantity": 7,
+  "image_file": "/assets/product_images/Canine.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Gourmet Fish Flakes",
+  "prod_description": "Gourmet Fish Flakes are a delicious and nutritious food for your aquarium fish.",
+  "price": 99.99,
+  "quantity": 30,
+  "image_file": "/assets/product_images/FishyFlakes.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Paw Print Litter Mat",
+  "prod_description": "Paw Print Litter Mat helps keep your floors clean by trapping litter and dirt from your cat's paws.",
+  "price": 54.99,
+  "quantity": 13,
+  "image_file": "/assets/product_images/PawP.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Avian Adventures Bird Cage",
+  "prod_description": "Avian Adventures bird cage is a spacious and comfortable home for your pet bird.",
+  "price": 449.99,
+  "quantity": 4,
+  "image_file": "/assets/product_images/BirdPrison.jpg",
+  "allergens": false,
+  "age_preferred": null
+},
+{
+  "name": "Wagging Tail Dog Treats",
+  "prod_description": "Wagging Tail Dog Treats are a delicious and healthy snack for your pup.",
+  "price": 17.99,
+  "quantity": 40,
+  "image_file": "/assets/product_images/Mixed-Treat-Box.jpg",
+  "allergens": true,
+  "age_preferred": null
+},
+{
+  "name": "Aquatic Plants Pack",
+  "prod_description": "Aquatic Plants Pack includes a variety of plants to add to your aquarium for decoration and oxygenation.",
+  "price": 190.99,
+  "quantity": 15,
+  "image_file": "/assets/product_images/bba166191939747992737ce8442988ad.jpg",
+  "allergens": false,
+  "age_preferred": null
+}
+
+
 
 ]
