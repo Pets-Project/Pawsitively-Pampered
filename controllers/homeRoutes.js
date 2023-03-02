@@ -26,11 +26,11 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: User  },{ model: Product },{ model: Pet }],
+      include: [{ model: Pet }]
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true
@@ -62,7 +62,6 @@ router.get('/contactform', async (req, res) => {
 router.get('/products', async (req, res) => {
   try {
     const productData = await Product.findAll({
-      
     });
   
 

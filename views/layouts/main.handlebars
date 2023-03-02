@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Pawsitively-Pampered/public/css/contactform.css">
+    <link
+      rel="stylesheet"
+      href="/Pawsitively-Pampered/public/css/contactform.css"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
       rel="stylesheet"
@@ -20,9 +23,17 @@
       ["ui-monospace", "monospace"], }, }, corePlugins: { preflight: false, },
       };
     </script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script
+      src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    ></script>
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
 
     <title>Main</title>
   </head>
@@ -121,12 +132,10 @@
               >
               </div>
               {{#if logged_in}}
-                <a
-                  href="/profile"
-                  title=""
+                <button
                   class="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
-                  role="button"
-                > Welcome {{name}}! </a>
+                  id="logout"
+                >Logout!</button>
               {{else}}
                 <a
                   href="/login"
@@ -192,15 +201,18 @@
           </nav>
         </div>
       </header>
-    {{{body}}}
+      {{{body}}}
     </div>
 
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
-
-    <script src="/js/responsive.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
     ></script>
+    <script src="/js/responsive.js"></script>
+
   </body>
 
 </html>
