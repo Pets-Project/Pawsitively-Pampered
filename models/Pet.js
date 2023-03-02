@@ -28,7 +28,7 @@ Pet.init(
         breed: {
             type: DataTypes.STRING,
         },
-        gender: {
+        size: {
             type: DataTypes.STRING,
             allowNull: false,
         },

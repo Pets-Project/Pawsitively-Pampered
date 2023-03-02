@@ -37,7 +37,6 @@ Product.init(
         age_preferred: {
             type: DataTypes.INTEGER,
             allowNull: false,
-    
         }
     },
     {

@@ -1,14 +1,18 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#pet-name').value.trim();
+  const petSpecies = document.querySelector('#species').value.trim();
+  const petBreed = document.querySelector('#breed').value.trim();
+  const petSize = document.querySelector('#breed').value.trim();
+  const petAllergies = document.querySelector('#allergies').value.trim();
+  const petDiet = document.querySelector('#diet_needs').value.trim();
+  const petAge = document.querySelector('#age').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && petSpecies && petBreed && petAllergies && petDiet && petAge) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, petSpecies, petBreed, petSize, petAllergies, petDiet, petAge }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -21,6 +25,12 @@ const newFormHandler = async (event) => {
     }
   }
 };
+
+const toggleForm = () => {
+  document
+  .querySelector('.new-project-form')
+  .classList.toggle('hidden');
+}
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -37,6 +47,10 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+
+document
+.querySelector('#newPetBtn')
+.addEventListener('click', toggleForm);
 
 document
   .querySelector('.new-project-form')

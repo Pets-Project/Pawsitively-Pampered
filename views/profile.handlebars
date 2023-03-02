@@ -1,48 +1,113 @@
 <div class="row">
-  <div class="col-auto">
+  <div class="col-auto text-white">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <button
+      id="newPetBtn"
+      class="text-white text-2xl border-2 rounded-full p-2 m-2 text-center bg-blue-500 hover:bg-blue-600"
+    >+ Add A New Pet</button>
 
-    <form class="form new-project-form">
+    <form class="form new-pet-form hidden">
+
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label class="text-white" for="pet-name">Pet Name:</label>
+        <input class="form-input" type="text" id="pet-name" name="pet-name" />
       </div>
+
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label class="text-white" for="species">Type:</label>
+        <select id="species" name="petSpecies">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="bird">Bird</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="reptile">Reptile</option>
+          <option value="fish">Fish</option>
+          <option value="other">Other Small Pet</option>
+        </select>
       </div>
+
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label class="text-white" for="breed">Breed:</label>
+        <input class="form-input" type="text" id="breed" name="breed" />
       </div>
+
+      <div class="form-group">
+        <label class="text-white" for="size">Size:</label>
+        <select class="form-select" id="size" name="petSize" >
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="text-white" for="allergies">Allergies:</label>
+        <input class="form-input" type="text" id="allergies" name="allergies" />
+      </div>
+
+      <div class="form-group">
+        <label class="text-white" for="diet_needs">Diet Needs:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="diet_needs"
+          name="diet_needs"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="text-white" for="age">Age:</label>
+        <input class="form-input" type="number" id="age" name="age" />
+      </div>
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if pets}}
+    <div class="col-md-6 pet-list">
+      <h3>Pets:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+      {{#each pets as |pet|}}
+        <div class="flex-1 flex flex-wrap">
+          <div class="m-5">
+            <div
+              class="flex flex-col rounded-lg bg-neutral-700/30 shadow-lg dark:bg-neutral-700 md:max-w-xl md:flex-row"
+            >
+
+              <div class="flex flex-col justify-start p-6">
+                <h5
+                  class="mb-2 text-2xl font-medium text-blue-600 dark:text-neutral-50"
+                >
+                </h5>
+                <div class="flex flex-wrap mb-4 text-base text-white dark:text-white">
+                  <p class="m-2">Type: </p>
+                  <p class="m-2">Breed: </p>
+                  <p class="m-2">Age:</p>
+                  <p class="m-2">Size: </p>
+                  <p class="m-2">Allergies: </p>
+                  <p class="m-2">Special Needs:</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <button
+              class="btn btn-sm btn-danger"
+              data-id="{{pet.id}}"
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
+    {{/if}}
 </div>
 
-<script src="../public/js/profile.js"></script>
+<script src="/js/profile.js"></script>
