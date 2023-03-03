@@ -148,7 +148,7 @@
       "prod_description": "FurryFriends cozy and comfortable dog bed for your furry companion.",
       "price": 159.99,
       "quantity": 23,
-      "image_file": "/assets/product_images/DogBed.jpg",
+      "image_file": "/assets/product_images/dogobedo.jpg",
       "allergens": false,
       "age_preferred": 5
    },
@@ -244,11 +244,11 @@
   "age_preferred": 5
 },
 {
-  "name": "Playful Pup Toy Pack",
-  "prod_description": "Playful Pup toy pack includes a variety of toys for your energetic dog to enjoy.",
-  "price": 74.99,
+  "name": "Robot Dog",
+  "prod_description": "Robot dog with feeling and a mind of its own.",
+  "price": 74000.99,
   "quantity": 8,
-  "image_file": "/assets/product_images/PlayfulPup.jpg",
+  "image_file": "/assets/product_images/robodog.jpg",
   "allergens": false,
   "age_preferred": 5
 },
