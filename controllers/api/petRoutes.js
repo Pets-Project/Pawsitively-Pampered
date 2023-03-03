@@ -5,8 +5,16 @@ const withAuth = require('../../utils/auth');
 router.post('/profile', async (req, res) => {
     try {
         const petData = await Pet.create({
-            ...req.body,
-            user_id: req.session.user_id,
+            name: req.body.name,
+            species: req.body.species,
+            breed: req.body.breed,
+            gender: req.body.gender,
+            allergies: req.body.allergies,
+            diet_needs: req.body.diet_needs,
+            other_needs: req.body.other_needs,
+            age: req.body.age,
+            owner_id: req.session.user_id,
+            product_id: req.body.product_id,
         });
 
         res.status(200).json(petData);
