@@ -28,12 +28,12 @@ Pet.init(
         breed: {
             type: DataTypes.STRING,
         },
-        gender: {
+        size: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         allergies: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         diet_needs: {
