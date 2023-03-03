@@ -72,6 +72,23 @@ router.get('/products', async (req, res) => {
   }
 });
 
+router.get('/products/:id', async (req, res) => {
+  try {
+    const productData = await Product.findByPk(req.params.id , {
+      
+    });
+  console.log(productData);
+
+    const products = productData.get({ plain: true });
+    console.log(products);
+    res.render('productdetails', { products });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
 
 
 module.exports = router;
