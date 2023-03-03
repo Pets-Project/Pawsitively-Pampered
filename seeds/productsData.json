@@ -203,7 +203,7 @@
    "prod_description": "AquaticWonders betta fish bowl for your betta fish.",
    "price": 49.99,
    "quantity": 18,
-   "image_file": "/assets/",
+   "image_file": "/assets/product_images/Beta.jpg",
    "allergens": false,
    "age_preferred": 5
 },
@@ -212,7 +212,7 @@
    "prod_description": "PetSafe automatic feeder to keep your pet fed even when you're not home.",
    "price": 59.95,
    "quantity": 6,
-   "image_file": "/assets/",
+   "image_file": "/assets/product_images/Autofeed.jpg",
    "allergens": false,
    "age_preferred": 5
 },
@@ -221,7 +221,7 @@
   "prod_description": "CritterCraze small animal cage for your pet rodents and other small animals.",
   "price": 79.95,
   "quantity": 12,
-  "image_file": "/assets/",
+  "image_file": "/assets/product_images/Small.jpg",
   "allergens": false,
   "age_preferred": 5
 },
@@ -230,7 +230,7 @@
   "prod_description": "Fido's Fashion Collar is a stylish accessory for your dog to wear on walks and outings.",
   "price": 24.99,
   "quantity": 15,
-  "image_file": "/assets/",
+  "image_file": "/assets/product_images/Fiddo.jpg",
   "allergens": false,
   "age_preferred": 5
 },
@@ -239,7 +239,7 @@
   "prod_description": "Whisker's Delight cat food is a nutritious and delicious meal for your feline friend.",
   "price": 34.99,
   "quantity": 25,
-  "image_file": "/assets/",
+  "image_file": "/assets/product_images/Whiskers.jpg",
   "allergens": true,
   "age_preferred": 5
 },
@@ -248,7 +248,7 @@
   "prod_description": "Playful Pup toy pack includes a variety of toys for your energetic dog to enjoy.",
   "price": 74.99,
   "quantity": 8,
-  "image_file": "/assets/",
+  "image_file": "/assets/product_images/PlayfulPup.jpg",
   "allergens": false,
   "age_preferred": 5
 },
