@@ -4,14 +4,14 @@
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="mt-4">
   <div class="col-md-6">
     <button
       id="newPetBtn"
       class="text-white text-2xl border-2 rounded-full p-2 m-2 text-center bg-blue-500 hover:bg-blue-600"
     >+ Add A New Pet</button>
 
-    <form class="form new-pet-form hidden">
+    <form id="newPetForm" class="form new-pet-form hidden">
 
       <div class="form-group">
         <label class="text-white" for="pet-name">Pet Name:</label>
@@ -88,12 +88,13 @@
                 >
                 </h5>
                 <div class="flex flex-wrap mb-4 text-base text-white dark:text-white">
-                  <p class="m-2">Type: </p>
-                  <p class="m-2">Breed: </p>
-                  <p class="m-2">Age:</p>
-                  <p class="m-2">Size: </p>
-                  <p class="m-2">Allergies: </p>
-                  <p class="m-2">Special Needs:</p>
+                  <p class="m-2">Type: <span class="text-xl text-blue-200">{{pet.name}}</span>  </p>
+                  <p class="m-2">Breed: <span class="text-xl text-blue-200">{{pet.breed}}</span> </p>
+                  <p class="m-2">Age: <span class="text-xl text-blue-200">{{pet.age}}</span> </p>
+                  <p class="m-2">Size: <span class="text-xl text-blue-200">{{pet.size}}</span> </p>
+                  <p class="m-2">Allergies: <span class="text-xl text-blue-200">{{pet.allergies}}</span> </p>
+                  <p class="m-2">Diet Needs: <span class="text-xl text-blue-200"> {{pet.diet_needs}}</span> </p>
+                  <p class="m-2">Other Needs: <span class="text-xl text-blue-200">{{pet.other_needs}}</span> </p>
                 </div>
               </div>
             </div>
@@ -103,6 +104,11 @@
               class="btn btn-sm btn-danger"
               data-id="{{pet.id}}"
             >DELETE</button>
+            
+            <button
+              class="btn btn-sm btn-danger"
+              data-id="{{pet.id}}"
+            >Update</button>
           </div>
         </div>
       {{/each}}
