@@ -10,7 +10,7 @@ const newFormHandler = async (event) => {
   const petAge = document.querySelector('#age').value.trim();
 
   if (name && petSpecies && petBreed && petAllergies && petDiet && petAge) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/pet`, {
       method: 'POST',
       body: JSON.stringify({ name, petSpecies, petBreed, petSize, petAllergies, petDiet, petAge }),
       headers: {
@@ -28,7 +28,7 @@ const newFormHandler = async (event) => {
 
 const toggleForm = () => {
   document
-  .querySelector('.new-project-form')
+  .querySelector('#newPetForm')
   .classList.toggle('hidden');
 }
 

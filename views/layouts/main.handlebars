@@ -54,12 +54,13 @@
             {{! Hamburger Menu icons. Both the menu itself and the X to close out. }}
             <div class="flex md:hidden">
               <button
+              id="navMenuBtn"
                 type="button"
                 class="text-white"
                 @click="expanded = !expanded"
                 :aria-expanded="expanded"
               >
-                <span x-show="!expanded" aria-hidden="true">
+                <span  x-show="!expanded" aria-hidden="true">
                   <svg
                     class="w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
@@ -72,23 +73,6 @@
                       stroke-linejoin="round"
                       stroke-width="1.5"
                       d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </span>
-
-                <span x-show="expanded" class="hidden hbMenuContent">
-                  <svg
-                    class="w-7 h-7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
                 </span>
@@ -148,7 +132,7 @@
           </div>
 
           {{! Hamburger Menu nav links. }}
-          <nav class="hidden hbMenuContent">
+          <nav id="hbMenuContent" class="hidden">
             <div class="flex flex-col pt-8 pb-4 space-y-6">
               <a
                 href="/profile"
@@ -211,6 +195,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
     ></script>
+
     <script src="/js/responsive.js"></script>
 
   </body>

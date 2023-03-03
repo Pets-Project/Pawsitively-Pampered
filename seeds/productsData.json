@@ -150,7 +150,7 @@
       "quantity": 23,
       "image_file": "/assets/product_images/DogBed.jpg",
       "allergens": false,
-      "age_preferred": null
+      "age_preferred": 5
    },
    {
       "name": "CritterPlay Exotic Bird Toy Set",
@@ -159,7 +159,7 @@
       "quantity": 14,
       "image_file": "/assets/product_images/BirdToys.jpg",
       "allergens": true,
-      "age_preferred": null
+      "age_preferred": 5
    },
   
    {
@@ -178,7 +178,7 @@
       "quantity": 20,
       "image_file": "/assets/product_images/HamsterHaven.jpg",
       "allergens": false,
-      "age_preferred": null
+      "age_preferred": 5
    },
    {
       "name": "ReptileRetreat Terrarium Kit",
@@ -196,7 +196,7 @@
    "quantity": 32,
    "image_file": "/assets/product_images/BirdFeed.jpg",
    "allergens": false,
-   "age_preferred": null
+   "age_preferred": 5
 },
 {
    "name": "AquaticWonders Betta Fish Bowl",
@@ -205,7 +205,7 @@
    "quantity": 18,
    "image_file": "/assets/",
    "allergens": false,
-   "age_preferred": null
+   "age_preferred": 5
 },
 {
    "name": "PetSafe Automatic Feeder",
@@ -214,7 +214,7 @@
    "quantity": 6,
    "image_file": "/assets/",
    "allergens": false,
-   "age_preferred": null
+   "age_preferred": 5
 },
 {
   "name": "CritterCraze Small Animal Cage",
@@ -223,7 +223,7 @@
   "quantity": 12,
   "image_file": "/assets/",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Fido's Fashion Collar",
@@ -232,7 +232,7 @@
   "quantity": 15,
   "image_file": "/assets/",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Whisker's Delight Cat Food",
@@ -241,7 +241,7 @@
   "quantity": 25,
   "image_file": "/assets/",
   "allergens": true,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Playful Pup Toy Pack",
@@ -250,7 +250,7 @@
   "quantity": 8,
   "image_file": "/assets/",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Purrfect Paradise Scratching Post",
@@ -259,7 +259,7 @@
   "quantity": 10,
   "image_file": "/assets/product_images/CatScratcher.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Fluffy Fleece Pet Bed",
@@ -268,7 +268,7 @@
   "quantity": 20,
   "image_file": "/assets/product_images/PetBed.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Canine Camo Dog Harness",
@@ -277,7 +277,7 @@
   "quantity": 7,
   "image_file": "/assets/product_images/Canine.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Gourmet Fish Flakes",
@@ -286,7 +286,7 @@
   "quantity": 30,
   "image_file": "/assets/product_images/FishyFlakes.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Paw Print Litter Mat",
@@ -295,7 +295,7 @@
   "quantity": 13,
   "image_file": "/assets/product_images/PawP.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Avian Adventures Bird Cage",
@@ -304,7 +304,7 @@
   "quantity": 4,
   "image_file": "/assets/product_images/BirdPrison.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Wagging Tail Dog Treats",
@@ -313,7 +313,7 @@
   "quantity": 40,
   "image_file": "/assets/product_images/Mixed-Treat-Box.jpg",
   "allergens": true,
-  "age_preferred": null
+  "age_preferred": 5
 },
 {
   "name": "Aquatic Plants Pack",
@@ -322,7 +322,7 @@
   "quantity": 15,
   "image_file": "/assets/product_images/bba166191939747992737ce8442988ad.jpg",
   "allergens": false,
-  "age_preferred": null
+  "age_preferred": 5
 }
 
 
