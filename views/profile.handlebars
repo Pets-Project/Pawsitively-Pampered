@@ -95,8 +95,8 @@
         >
           <a href="#!">
             <img
-              class="w-48 h-48 mx-auto rounded-lg"
-              src="./assets/dog-toy1.jpg"
+              class="w-48 h-48 p-3 mx-auto rounded-lg"
+              src="/assets/dog-treats.jpg"
               alt=""
             />
           </a>
@@ -127,8 +127,8 @@
   </div>
 
   {{#if pets}}
-    <div class="col-md-6">
-      <h3>Pets:</h3>
+    <div class="col-md-6 border-2 border-slate-100">
+      <h3 class="text-white">Pets:</h3>
 
       {{#each pets as |pet|}}
         <div class="flex-1 flex flex-wrap">
@@ -138,6 +138,7 @@
             >
 
               <div class="flex flex-col justify-start p-6">
+                <img class="w-16 h-16" src="/assets/petImg.png" alt="">
                 <h5
                   class="mb-2 text-2xl font-medium text-blue-600 dark:text-neutral-50"
                 >
