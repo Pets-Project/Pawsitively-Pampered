@@ -12,9 +12,6 @@ Pet.belongsTo(User, {
 });
 
 
-// Pet.hasMany(Product, {
-//     foreignKey: product_id,
-// });
 
 Pet.hasMany(Product, {
     foreignKey: 'product_id',

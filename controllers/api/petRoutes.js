@@ -1,29 +1,24 @@
 const router = require('express').Router();
-const { Pet } = require('../../models');
+const { Pet, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
+const productData = require('../../seeds/productsData.json')
 
-router.post('/profile', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const petData = await Pet.create({
-            name: req.body.name,
-            species: req.body.species,
-            breed: req.body.breed,
-            gender: req.body.gender,
-            allergies: req.body.allergies,
-            diet_needs: req.body.diet_needs,
-            other_needs: req.body.other_needs,
-            age: req.body.age,
-            owner_id: req.session.user_id,
-            product_id: req.body.product_id,
+          ...req.body,
+          owner_id: req.session.user_id,
+          product_id: Math.floor(Math.random() * productData.length + 1)
         });
-
+        console.log(petData);
         res.status(200).json(petData);
     } catch (err) {
         res.status(400).json(err);
+        console.log(err);
     }
 });
 
-router.put('/profile/:petid', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         // Extract the petId from the request parameters
         const petid = req.params.petid;
@@ -50,11 +45,11 @@ router.put('/profile/:petid', async (req, res) => {
     }
 });
 
-router.delete('/:petid', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
       const petData = await Pet.destroy({
         where: {
-          id: req.params.petid
+          id: req.params.id
         }
       });
   
@@ -66,6 +61,7 @@ router.delete('/:petid', async (req, res) => {
       res.status(200).json(petData);
     } catch (err) {
       res.status(500).json(err);
+      console.log(err);
     }
   });
 

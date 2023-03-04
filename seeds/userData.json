@@ -2,37 +2,31 @@
   {
     "name": "Zeus",
     "password": "password1",
-    "role": "Admin",
     "email": "zeus@hotmail.com"
   },
   {
     "name": "Gerardo",
     "password": "password2",
-    "role": "User",
     "email": "gerardo@yahoo.com"
   },
   {
     "name": "Rose",
     "password": "password3",
-    "role": "Admin",
     "email": "rose@gmail.com"
   },
   {
     "name": "Max",
     "password": "password4",
-    "role": "User",
     "email": "max@hotmail.com"
   },
   {
     "name": "Manny",
     "password": "password5",
-    "role": "Admin",
     "email": "manny@gmail.com"
   },
    {
     "name": "Adrian",
     "password": "password6",
-    "role": "User",
     "email": "Adrian@gmail.com"
   }
 ]
