@@ -19,14 +19,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const pet of petData) {
-    await Pet.create({
-      ...pet,
-      owner_id: users[Math.floor(Math.random() * users.length)].id,
-      product_id: products[Math.floor(Math.random() * products.length)].id,
-    });
-  }
-
+  const pets = await Pet.bulkCreate(petData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };

@@ -36,11 +36,6 @@ User.init(
                 len: [8, 14],
             },
         },
-        role: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: 'user'
-        },
         email: {
             type: DataTypes.STRING,
             unique: true,

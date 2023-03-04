@@ -2,17 +2,24 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#pet-name').value.trim();
-  const petSpecies = document.querySelector('#species').value.trim();
-  const petBreed = document.querySelector('#breed').value.trim();
-  const petSize = document.querySelector('#breed').value.trim();
-  const petAllergies = document.querySelector('#allergies').value.trim();
-  const petDiet = document.querySelector('#diet_needs').value.trim();
-  const petAge = document.querySelector('#age').value.trim();
+  const species = document.querySelector('#species').value.trim();
+  const breed = document.querySelector('#breed').value.trim();
+  const size = document.querySelector('#size').value.trim();
+  let allergies = document.querySelector('#allergies').value.trim();
+  const diet_needs = document.querySelector('#diet_needs').value.trim();
+  const other_needs = document.querySelector('#other_needs').value.trim();
+  const age = document.querySelector('#age').value.trim();
 
-  if (name && petSpecies && petBreed && petAllergies && petDiet && petAge) {
-    const response = await fetch(`/api/pet`, {
+  if (name && species && breed && size && allergies && diet_needs && other_needs && age) {
+    if(allergies == 'none' || allergies == 'None') {
+      allergies = false;
+    } else {
+      allergies = true;
+    }
+
+    const response = await fetch(`/api/pets`, {
       method: 'POST',
-      body: JSON.stringify({ name, petSpecies, petBreed, petSize, petAllergies, petDiet, petAge }),
+      body: JSON.stringify({ name, species, breed, size, allergies, diet_needs, other_needs, age }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -21,7 +28,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to add pet');
     }
   }
 };
@@ -36,14 +43,14 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/pets/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete pet');
     }
   }
 };
@@ -53,9 +60,9 @@ document
 .addEventListener('click', toggleForm);
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-pet-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('#pet-delete')
   .addEventListener('click', delButtonHandler);
