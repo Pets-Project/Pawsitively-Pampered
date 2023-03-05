@@ -1,7 +1,7 @@
 const User = require('./User');
 const Product = require('./Product');
 const Pet = require('./Pet');
-
+//links the models together in the database
 User.hasMany(Pet, {
     foreignKey: 'owner_id',
     onDelete: 'CASCADE'

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+//Gets product data for both for our root route for products
 router.get('/', async (req, res) => {
     try {
         const prodData = await Product.findAll({

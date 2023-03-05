@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Product, Pet } = require('../models');
 const withAuth = require('../utils/auth');
-
+//gets homepage route
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+//gets profile route
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -53,7 +53,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+// gets contact form
 router.get('/contactform', async (req, res) => {
   try {
     // Pass serialized data and session flag into template
@@ -62,7 +62,7 @@ router.get('/contactform', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// gets products
 router.get('/products', async (req, res) => {
   try {
     const productData = await Product.findAll({
@@ -75,7 +75,7 @@ router.get('/products', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//gets products by id
 router.get('/products/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id , {
