@@ -1,44 +1,50 @@
- <!-- Profile Page with pet data-->
-<div class="row">
-  <div class="col-auto text-white">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
 
-<div class="mt-4">
-  <div class="col-md-6">
+<div class="">
+  <div class="flex justify-center mx-auto pt-16">
+    <div>
+      <p class="text-gray-200 text-5xl text-center font-normal pb-3">Welcome
+        {{name}}!</p>
+      <h1
+        class="xl:text-4xl text-3xl text-center text-gray-300 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto"
+      >
+
+      </h1>
+    </div>
+
+  </div>
+  <div class="">
     <button
       id="newPetBtn"
       class="text-white text-2xl border-2 rounded-full p-2 m-2 text-center bg-blue-500 hover:bg-blue-600"
     >+ Add A New Pet</button>
 
-    <form id="newPetForm" class="form new-pet-form hidden">
+    <form id="newPetForm" class="flex flex-wrap bg-slate-600/50 w-screen form new-pet-form text-center p-5 hidden">
 
-      <div class="form-group">
-        <label class="text-white" for="pet-name">Pet Name:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="pet-name">Pet Name:</label>
         <input class="form-input" type="text" id="pet-name" name="pet-name" />
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="species">Type:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="species">Type:</label>
         <select id="species" name="petSpecies">
-          <option value="dog">Dog</option>
-          <option value="cat">Cat</option>
-          <option value="bird">Bird</option>
-          <option value="rabbit">Rabbit</option>
-          <option value="reptile">Reptile</option>
-          <option value="fish">Fish</option>
-          <option value="other">Other Small Pet</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Bird">Bird</option>
+          <option value="Rabbit">Rabbit</option>
+          <option value="Reptile">Reptile</option>
+          <option value="Fish">Fish</option>
+          <option value="Small_Pet">Other Small Pet</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="breed">Breed:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="breed">Breed:</label>
         <input class="form-input" type="text" id="breed" name="breed" />
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="size">Size:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="size">Size:</label>
         <select class="form-select" id="size" name="petSize">
           <option value="small">Small</option>
           <option value="medium">Medium</option>
@@ -46,13 +52,13 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="allergies">Allergies:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="allergies">Allergies:</label>
         <input class="form-input" type="text" id="allergies" name="allergies" />
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="diet_needs">Diet Needs:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="diet_needs">Diet Needs:</label>
         <input
           class="form-input"
           type="text"
@@ -61,9 +67,8 @@
         />
       </div>
 
-
-      <div class="form-group">
-        <label class="text-white" for="other_needs">Other Needs:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="other_needs">Other Needs:</label>
         <input
           class="form-input"
           type="text"
@@ -72,134 +77,143 @@
         />
       </div>
 
-      <div class="form-group">
-        <label class="text-white" for="age">Age:</label>
+      <div class="form-group m-3">
+        <label class="text-white text-xl" for="age">Age:</label>
         <input class="form-input" type="number" id="age" name="age" />
       </div>
 
-      <div class="form-group">
+      <div class="form-group m-5">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
 
 
-  <div
-    class="fixed right-0 top-40 bottom-8 text-3xl text-white text-center border-2 border-gray overflow-y-scroll"
-  >
-    <h2>Top Recommended Item</h2>
+  {{! Your pets page }}
+  <section class="mb-10 text-gray-800 text-center bg-light">
+    <h2 class="text-3xl font-bold mb-12"><u class="text-blue-600">Your Pets:</u></h2>
+    <div class="flex flex-wrap justify-evenly">
+      {{#if pets}}
+        {{#each pets as |pet|}}
 
-    <div class="flex justify-center m-2">
-      <div class="">
-        <div
-          class="block max-w-sm rounded-lg bg-neutral-500/50 shadow-lg dark:bg-neutral-700"
-        >
-          <a href="#!">
-            <img
-              class="w-48 h-48 p-3 mx-auto rounded-lg"
-              src="/assets/dog-treats.jpg"
-              alt=""
-            />
-          </a>
-          <div class="p-6">
-            <h5
-              class="mb-2 text-xl font-medium leading-tight text-neutral-200 dark:text-neutral-50"
-            >
-              Floppy Knot Fox
-            </h5>
-            <p
-              class="mb-4 text-base text-center text-neutral-200 dark:text-neutral-200"
-            >
-              Keep your dog active, engaged and full entertained with this KONG
-              Floppy Knots Fox.
-            </p>
-            <button
-              type="button"
-              class="inline-block rounded bg-gray-600 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-neutral-200 shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              More Info
-            </button>
+          <div class="w-2/3 md:w-1/5 m-5">
+            <div class="mb-10">
+              <div class="rounded-lg shadow-lg h-full block bg-white">
+                <div class="flex justify-center">
+                  <div class="flex justify-center" style="margin-top: -50px">
+                    <img
+                      src="/assets/petImg.png"
+                      class="rounded-full mx-auto shadow-lg"
+                      alt=""
+                      style="width: 80px"
+                    />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h5 class="text-lg font-bold mb-4"> {{pet.name}} </h5>
+                  <p class="mb-6">{{pet.species}}</p>
+                  <ul class="list-inside ">
+                    <p
+                      class="text-center text-gray-600 text-base m-2 font-normal"
+                    >
+                      <span class="font-semibold"> Breed:</span>
+                      {{pet.breed}}.
+                    </p>
+                    <p
+                      class="text-center text-gray-600 text-base m-2 font-normal"
+                    >
+                      <span class="font-semibold">Age:</span>
+                      {{pet.age}}.
+                    </p>
+                    <p
+                      class="text-center text-gray-600 text-base m-2 font-normal"
+                    >
+                      <span class="font-semibold">Size:</span>
+                      {{pet.size}}.
+                    </p>
+                    {{#if allergies}}
+                      <p
+                        class="text-center text-gray-600 text-base m-2 font-normal"
+                      >
+                        <span class="font-semibold">Allergies:</span>
+                        Yes.
+                      </p>
+                    {{else}}
+                      <p
+                        class="text-center text-gray-600 text-base m-2 font-normal"
+                      >
+                        <span class="font-semibold">Allergies:</span>
+                        No.
+                      </p>
+                    {{/if}}
+                    <p
+                      class="text-center text-gray-600 text-base m-2 font-normal"
+                    >
+                      <span class="font-semibold">Diet Needs:</span>
+                      {{pet.diet_needs}}.
+                    </p>
+                    <p
+                      class="text-center text-gray-600 text-base m-2 font-normal"
+                    >
+                      <span class="font-semibold">Other Needs:</span>
+                      {{pet.other_needs}}.
+                    </p>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+
+  </section>
+
+  <div class="mt-4">
+
+    {{! Recommended Items }}
+    {{#if pets}}
+    <div
+      class="text-3xl text-white text-center border-2 border-gray overflow-y-scroll"
+    >
+      <h2>Top Recommended Item</h2>
+
+      <div class="flex justify-center m-2">
+        <div class="">
+          <div
+            class="block max-w-sm rounded-lg bg-neutral-500/50 shadow-lg dark:bg-neutral-700"
+          >
+            <a href="#!">
+              <img
+                class="w-48 h-48 p-3 mx-auto rounded-lg"
+                src="/assets/dog-treats.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-200 dark:text-neutral-50"
+              >
+                Pawsitively Pampered Speciality Treats
+              </h5>
+              <p
+                class="mb-4 text-base text-center text-neutral-200 dark:text-neutral-200"
+              >
+                Healthy and tasty treats for all your animals. Available in small, medium and large quantites.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  {{#if pets}}
-    <div class="col-md-6 border-2 border-slate-100">
-      <h3 class="text-white">Pets:</h3>
-
-      {{#each pets as |pet|}}
-        <div class="flex-1 flex flex-wrap">
-          <div class="m-5">
-            <div
-              class="flex flex-col rounded-lg bg-neutral-700/30 shadow-lg dark:bg-neutral-700 md:max-w-xl md:flex-row"
-            >
-
-              <div class="flex flex-col justify-start p-6">
-                <img class="w-16 h-16" src="/assets/petImg.png" alt="">
-                <h5
-                  class="mb-2 text-2xl font-medium text-blue-600 dark:text-neutral-50"
-                >
-                {{pet.name}}
-                </h5>
-                <div
-                  class="flex flex-wrap mb-4 text-base text-white dark:text-white"
-                >
-                  <p class="m-2">Type:
-                    <span class="text-xl text-blue-200">{{pet.species}}</span>
-                  </p>
-                  <p class="m-2">Breed:
-                    <span class="text-xl text-blue-200">{{pet.breed}}</span>
-                  </p>
-                  <p class="m-2">Age:
-                    <span class="text-xl text-blue-200">{{pet.age}}</span>
-                  </p>
-                  <p class="m-2">Size:
-                    <span class="text-xl text-blue-200">{{pet.size}}</span>
-                  </p>
-                  {{#if pet.allergies}}
-                  <p class="m-2">Allergies:
-                    <span class="text-xl text-blue-200">Yes</span>
-                  </p>
-                  {{else}}
-                  <p class="m-2">Allergies:
-                    <span class="text-xl text-blue-200">No</span>
-                  </p>
-                  {{/if}}
-
-                  <p class="m-2">Diet Needs:
-                    <span class="text-xl text-blue-200">
-                      {{pet.diet_needs}}</span>
-                  </p>
-                  <p class="m-2">Other Needs:
-                    <span
-                      class="text-xl text-blue-200"
-                    >{{pet.other_needs}}</span>
-                  </p>
-                </div>
-              </div>
-            <div class="m-2">
-              <button
-                id="pet-delete"
-                class="btn btn-sm btn-danger m-1 pet-list"
-                data-id="{{pet.id}}"
-              > DELETE</button>
-
-              <button
-                class="btn btn-sm btn-success m-1"
-                data-id="{{pet.id}}"
-              >Update</button>
-            </div>
-            </div>
-          </div>
-
-        </div>
-      {{/each}}
+    {{else}}
+    <div class="text-2xl italic">
+      Add a pet to see Items available for you!
     </div>
-  {{/if}}
+    {{/if}}
+  </div>
 </div>
 
 <script src="/js/profile.js"></script>
+
