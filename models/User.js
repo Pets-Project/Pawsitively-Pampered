@@ -15,7 +15,7 @@ class User extends Model { checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+// user mode with id, name , password, and email
 User.init(
     {
         id: {
@@ -44,6 +44,7 @@ User.init(
             },
         },
     },
+    //user authentification with bcrypt
     {
         hooks: {
             beforeCreate: async (newUserData) => {

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Pet, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 const productData = require('../../seeds/productsData.json')
-
+//Post route for submitting user pet data.
 router.post('/', withAuth, async (req, res) => {
     try {
         const petData = await Pet.create({
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
         console.log(err);
     }
 });
-
+//Update user data once changed
 router.put('/:id', withAuth, async (req, res) => {
     try {
         // Extract the petId from the request parameters
@@ -44,7 +44,7 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(500).send(`Error updating user ${petid}: ${error.message}`);
     }
 });
-
+//Delete previous pet data for profile
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const petData = await Pet.destroy({

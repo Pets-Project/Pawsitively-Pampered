@@ -8,7 +8,7 @@ const petData = require('./petData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
+//contains all seeds for userdata, products and petdata. These all come from our json files in the seeds folder.
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
