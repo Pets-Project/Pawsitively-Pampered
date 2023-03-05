@@ -172,6 +172,7 @@
   <div class="mt-4">
 
     {{! Recommended Items }}
+    {{#if pets}}
     <div
       class="text-3xl text-white text-center border-2 border-gray overflow-y-scroll"
     >
@@ -205,7 +206,11 @@
         </div>
       </div>
     </div>
-
+    {{else}}
+    <div class="text-2xl italic">
+      Add a pet to see Items available for you!
+    </div>
+    {{/if}}
   </div>
 </div>
 
