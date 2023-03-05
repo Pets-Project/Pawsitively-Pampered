@@ -6,3 +6,5 @@ router.use('/users', userRoutes);
 router.use('/pets', petRoutes);
 
 module.exports = router;
+
+//Routing for /users and /pets routes

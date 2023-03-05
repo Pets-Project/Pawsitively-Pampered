@@ -8,7 +8,7 @@ class Pet extends Model {}
  * @param {Sequelize} sequelize 
  */
 
- 
+ // pet model by id, name, species, breed, size, allergies, diet_needs, other_needs, age, owner_id, product_id
 Pet.init(
     {
         id: {
