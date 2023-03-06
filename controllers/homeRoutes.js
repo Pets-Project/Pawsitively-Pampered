@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User, Product, Pet } = require('../models');
 const withAuth = require('../utils/auth');
+const nodemailer = require('nodemailer');
+
 //gets homepage route
 router.get('/', async (req, res) => {
   try {
@@ -62,6 +64,40 @@ router.get('/contactform', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// contact form post for receive email from customers
+router.post('/send', (req, res) => {
+  console.log(req.body);
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'mannyrveloz10@gmail.com', //this email has to be change with the email of the project.
+      pass: 'otfgqpwuvdwarotm' //this password have to be generated in gmail: 
+      //1)Go to the google account security section 
+      //2) turn on 2-step verification under "singing in" to google (else 3rd step is not possible) 
+      //3) under signing in to google you will find App passwords, click it 
+      //4) select the "select app" and click custom app 
+      //5) Type any name of your choice and generate a password. Now use the same email account and instead of your real password use the generated password.
+    }
+  }); 
+  const mailOptions = {
+    from: req.body.email,
+    to: 'mannyrveloz10@gmail.com', //this email has to be change with the email of the project too.
+    subject: `Message from ${req.body.email}: ${req.body.subject}`,
+    text: req.body.message
+  };
+  transporter.sendMail(mailOptions, (error, info)=>{
+    if(error){
+      console.log(error);
+      res.send('error')
+    }else{
+      console.log('Email sent: '+ info.response);
+      res.send('success')
+    }
+  });
+});
+
+
 // gets products
 router.get('/products', async (req, res) => {
   try {
